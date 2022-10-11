@@ -1,45 +1,37 @@
 import React from "react";
-import styled from "styled-components";
-import { Row, Col, Grid } from "@zendeskgarden/react-grid";
-import { MD } from "@zendeskgarden/react-typography";
+import { Body, Cell, Head, HeaderCell, HeaderRow, Row, Table } from "@zendeskgarden/react-tables";
 
-export default function Main({ data, currentUser, locale, ticketSubject, ticketId }) {
+export default function Main({ currentUser, locale, ticketSubject, ticketId }) {
 	return (
-		<AppView
-			data={data}
-			currentUser={currentUser}
-			locale={locale}
-			ticketSubject={ticketSubject}
-			ticketId={ticketId}
-		/>
+		<>
+			<Table style={{ maxWidth: 300 }}>
+				<Head>
+					<HeaderRow>
+						<HeaderCell>Ticket ID:</HeaderCell>
+						<HeaderCell>Ticket Subject:</HeaderCell>
+					</HeaderRow>
+				</Head>
+				<Body>
+					<Row>
+						<Cell>{ticketId}</Cell>
+						<Cell>{ticketSubject}</Cell>
+					</Row>
+				</Body>
+			</Table>
+			<Table style={{ maxWidth: 300 }}>
+				<Head>
+					<HeaderRow>
+						<HeaderCell>Current User:</HeaderCell>
+						<HeaderCell>Locale:</HeaderCell>
+					</HeaderRow>
+				</Head>
+				<Body>
+					<Row>
+						<Cell>{currentUser}</Cell>
+						<Cell>{locale}</Cell>
+					</Row>
+				</Body>
+			</Table>
+		</>
 	);
 }
-
-function View(props) {
-	return (
-		<div className={props.className}>
-			<Grid>
-				<Row>
-					<Col>
-						<MD>Ticket ID: {props.ticketId} </MD>
-					</Col>
-					<Col>
-						<MD>Ticket Subject: {props.ticketSubject}</MD>
-					</Col>
-				</Row>
-			</Grid>
-		</div>
-	);
-}
-
-const AppView = styled(View)`
-	#primaryResults {
-		flex: 1;
-		overflow-y: auto;
-	}
-	#primaryView {
-		display: flex;
-		flex-direction: column;
-		height: 100vh;
-	}
-`;

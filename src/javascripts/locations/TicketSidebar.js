@@ -9,7 +9,6 @@ import ErrorBoundary from "../modules/ErrorBoundary";
 import Main from "../modules/Main";
 
 export default function TicketSidebar({ client }) {
-  
 	// Setting up state
 	const [currentUser, setCurrentUser] = useState(null);
 	const [locale, setLocale] = useState(null);
@@ -43,10 +42,10 @@ export default function TicketSidebar({ client }) {
 		}
 
 		const locale = currentUser ? currentUser.locale : DEFAULT_LOCALE;
-
+		
 		I18n.loadTranslations(locale);
 
-		setCurrentUser(currentUser);
+		setCurrentUser(currentUser.name);
 		setLocale(locale);
 		setTicketSubject(ticketSubject);
 		setTicketId(ticketId);
