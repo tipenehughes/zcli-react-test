@@ -42,13 +42,34 @@ export default function TicketSidebar({ client }) {
 		}
 
 		const locale = currentUser ? currentUser.locale : DEFAULT_LOCALE;
-		
+
 		I18n.loadTranslations(locale);
 
 		setCurrentUser(currentUser.name);
 		setLocale(locale);
 		setTicketSubject(ticketSubject);
 		setTicketId(ticketId);
+	};
+
+	// Event handler for displaying modal
+	const handleDisplayModal = () => {
+		client
+			.invoke("instances.create", {
+				location: "modal",
+				url: "https://www.zendesk.com/",
+				size: {
+					// optional
+					width: "500px",
+					height: "300px",
+				},
+			})
+			.then(function (modalContext) {
+				// The modal is on screen now
+				const modalClient = client.instance(modalContext["instances.create"][0].instanceGuid);
+				modalClient.on("modal.close", function () {
+					// The modal has been closed
+				});
+			});
 	};
 
 	return (
@@ -60,6 +81,7 @@ export default function TicketSidebar({ client }) {
 						locale={locale}
 						ticketSubject={ticketSubject}
 						ticketId={ticketId}
+						handleDisplayModal={handleDisplayModal}
 					/>
 				</ThemeProvider>
 			</ErrorBoundary>

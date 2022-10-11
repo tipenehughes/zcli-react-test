@@ -6,7 +6,8 @@ import TicketSidebar from "../locations/TicketSidebar";
 var client = ZAFClient.init();
 
 const App = () => {
-	console.log("App");
+	client.invoke("resize", { width: "100%", height: "200px" });
+
 	return (
 		<StrictMode>
 			<TicketSidebar client={client} />

@@ -25,7 +25,7 @@ const externalAssets = {
 
 module.exports = {
 	entry: {
-		app: ["./src/javascripts/modules/app.js", "./src/index.css"],
+		app: ["./src/javascripts/modules/App.js", "./src/index.css"],
 	},
 	output: {
 		filename: "[name].js",

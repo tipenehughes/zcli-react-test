@@ -1,10 +1,12 @@
 import React from "react";
+import { Button } from "@zendeskgarden/react-buttons";
 import { Body, Cell, Head, HeaderCell, HeaderRow, Row, Table } from "@zendeskgarden/react-tables";
 
-export default function Main({ currentUser, locale, ticketSubject, ticketId }) {
+export default function Main({ currentUser, locale, ticketSubject, ticketId, handleDisplayModal }) {
 	return (
 		<>
-			<Table style={{ maxWidth: 300 }}>
+			<Button onClick={handleDisplayModal}>Display Modal</Button>
+			<Table style={{ minWidth: 200 }}>
 				<Head>
 					<HeaderRow>
 						<HeaderCell>Ticket ID:</HeaderCell>
@@ -18,7 +20,7 @@ export default function Main({ currentUser, locale, ticketSubject, ticketId }) {
 					</Row>
 				</Body>
 			</Table>
-			<Table style={{ maxWidth: 300 }}>
+			<Table style={{ minWidth: 200 }}>
 				<Head>
 					<HeaderRow>
 						<HeaderCell>Current User:</HeaderCell>
