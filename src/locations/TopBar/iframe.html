@@ -9,9 +9,9 @@
 	</head>
 
 	<body>
-		<section data-main class="main">
+		<div id="root">
 			<img class="loader" src="spinner.gif" />
-		</section>
+		</div>
 		<% _.forEach(htmlWebpackPlugin.options.vendorJs, function(js) { %>
 		<script type="text/javascript" src="<%= js %>"></script>
 		<% }); %>
