@@ -1,7 +1,7 @@
 import React, { StrictMode } from "react";
 import ReactDOM from "react-dom";
 
-import TicketSidebar from "../locations/TicketSidebar";
+import TopBar from "./TopBar";
 
 var client = ZAFClient.init();
 
@@ -10,7 +10,7 @@ const App = () => {
 
 	return (
 		<StrictMode>
-			<TicketSidebar client={client} />
+			<TopBar client={client} />
 		</StrictMode>
 	);
 };

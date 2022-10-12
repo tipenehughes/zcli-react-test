@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { handleError } from "../lib/helpers";
+import { handleError } from "../../lib/helpers";
 import { ThemeProvider } from "@zendeskgarden/react-theming";
-import { Theme } from "../modules/Theme";
-import { DEFAULT_LOCALE } from "../lib/constants";
+import { Theme } from "../../modules/Theme";
+import { DEFAULT_LOCALE } from "../../lib/constants";
 
-import I18n from "../lib/i18n";
-import ErrorBoundary from "../modules/ErrorBoundary";
-import Main from "../modules/Main";
+import I18n from "../../lib/i18n";
+import ErrorBoundary from "../../modules/ErrorBoundary";
+import Main from "../../modules/Main";
 
 export default function TicketSidebar({ client }) {
 	// Setting up state

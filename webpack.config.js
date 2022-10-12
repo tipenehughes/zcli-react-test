@@ -25,7 +25,8 @@ const externalAssets = {
 
 module.exports = {
 	entry: {
-		app: ["./src/javascripts/modules/App.js", "./src/index.css"],
+		TicketSidebar: ["./src/javascripts/locations/TicketSidebar/index.js", "./src/index.css"],
+		TopBar: ["./src/javascripts/locations/TopBar/index.js", "./src/index.css"],
 	},
 	output: {
 		filename: "[name].js",
@@ -72,13 +73,26 @@ module.exports = {
 			path: path.resolve(__dirname, "./src/translations"),
 		}),
 
+		// TicketSidebar HTML
 		new HtmlWebpackPlugin({
 			warning:
 				"AUTOMATICALLY GENERATED FROM ./src/templates/iframe.html - DO NOT MODIFY THIS FILE DIRECTLY",
 			vendorCss: externalAssets.css.filter((path) => !!path),
 			vendorJs: externalAssets.js,
-			template: "./src/templates/iframe.html",
+			chunks: ["TicketSidebar"],
+			template: "./src/javascripts/locations/TicketSidebar/iframe.html",
 			filename: "iframe.html",
+		}),
+
+		// TopBar HTML
+		new HtmlWebpackPlugin({
+			warning:
+				"AUTOMATICALLY GENERATED FROM ./src/templates/iframe.html - DO NOT MODIFY THIS FILE DIRECTLY",
+			vendorCss: externalAssets.css.filter((path) => !!path),
+			vendorJs: externalAssets.js,
+			chunks: ["TopBar"],
+			template: "./src/javascripts/locations/TopBar/iframe.html",
+			filename: "top_bar.html",
 		}),
 	],
 };
