@@ -25,8 +25,8 @@ const externalAssets = {
 
 module.exports = {
 	entry: {
-		TicketSidebar: ["./src/javascripts/locations/TicketSidebar/index.js", "./src/index.css"],
-		TopBar: ["./src/javascripts/locations/TopBar/index.js", "./src/index.css"],
+		TicketSidebar: ["./src/locations/TicketSidebar/index.js", "./src/index.css"],
+		TopBar: ["./src/locations/TopBar/index.js", "./src/index.css"],
 	},
 	output: {
 		filename: "[name].js",
@@ -76,22 +76,22 @@ module.exports = {
 		// TicketSidebar HTML
 		new HtmlWebpackPlugin({
 			warning:
-				"AUTOMATICALLY GENERATED FROM ./src/templates/iframe.html - DO NOT MODIFY THIS FILE DIRECTLY",
+				"AUTOMATICALLY GENERATED FROM ./src/locations/TicketSidebar/iframe.html - DO NOT MODIFY THIS FILE DIRECTLY",
 			vendorCss: externalAssets.css.filter((path) => !!path),
 			vendorJs: externalAssets.js,
 			chunks: ["TicketSidebar"],
-			template: "./src/javascripts/locations/TicketSidebar/iframe.html",
+			template: "./src/locations/TicketSidebar/iframe.html",
 			filename: "iframe.html",
 		}),
 
 		// TopBar HTML
 		new HtmlWebpackPlugin({
 			warning:
-				"AUTOMATICALLY GENERATED FROM ./src/templates/iframe.html - DO NOT MODIFY THIS FILE DIRECTLY",
+				"AUTOMATICALLY GENERATED FROM ./src/locations/TopBar/iframe.html - DO NOT MODIFY THIS FILE DIRECTLY",
 			vendorCss: externalAssets.css.filter((path) => !!path),
 			vendorJs: externalAssets.js,
 			chunks: ["TopBar"],
-			template: "./src/javascripts/locations/TopBar/iframe.html",
+			template: "./src/locations/TopBar/iframe.html",
 			filename: "top_bar.html",
 		}),
 	],
