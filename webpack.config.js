@@ -73,26 +73,8 @@ module.exports = {
 			path: path.resolve(__dirname, "./src/translations"),
 		}),
 
-		// TicketSidebar HTML
-		new HtmlWebpackPlugin({
-			warning:
-				"AUTOMATICALLY GENERATED FROM ./src/locations/TicketSidebar/iframe.html - DO NOT MODIFY THIS FILE DIRECTLY",
-			vendorCss: externalAssets.css.filter((path) => !!path),
-			vendorJs: externalAssets.js,
-			chunks: ["TicketSidebar"],
-			template: "./src/locations/TicketSidebar/iframe.html",
-			filename: "iframe.html",
-		}),
-
-		// TopBar HTML
-		new HtmlWebpackPlugin({
-			warning:
-				"AUTOMATICALLY GENERATED FROM ./src/locations/TopBar/iframe.html - DO NOT MODIFY THIS FILE DIRECTLY",
-			vendorCss: externalAssets.css.filter((path) => !!path),
-			vendorJs: externalAssets.js,
-			chunks: ["TopBar"],
-			template: "./src/locations/TopBar/iframe.html",
-			filename: "top_bar.html",
-		}),
+		// Generates an HTML file for each location
+		// Added dynamically by ZCLI commands
+		new HtmlWebpackPlugin
 	],
 };
