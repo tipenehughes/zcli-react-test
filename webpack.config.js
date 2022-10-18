@@ -24,7 +24,7 @@ const externalAssets = {
 };
 
 module.exports = {
-	// Entry point added dynamically by ZCLI commands
+	// File paths added dynamically by ZCLI commands
 	entry,
 	output: {
 		filename: "[name].js",
