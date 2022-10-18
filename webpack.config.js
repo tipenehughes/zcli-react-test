@@ -24,10 +24,8 @@ const externalAssets = {
 };
 
 module.exports = {
-	entry: {
-		TicketSidebar: ["./src/locations/TicketSidebar/index.js", "./src/index.css"],
-		TopBar: ["./src/locations/TopBar/index.js", "./src/index.css"],
-	},
+	// Entry point added dynamically by ZCLI commands
+	entry,
 	output: {
 		filename: "[name].js",
 		path: path.resolve(__dirname, "dist/assets"),
