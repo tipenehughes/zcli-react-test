@@ -6,7 +6,7 @@ import TicketEditor from "./TicketEditor";
 var client = ZAFClient.init();
 
 const App = () => {
-	client.invoke("resize", { width: "100%", height: "500px" });
+	client.invoke("resize", { width: "300px", height: "100%" });
 
 	return (
 		<StrictMode>

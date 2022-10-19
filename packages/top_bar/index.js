@@ -6,7 +6,7 @@ import TopBar from "./TopBar";
 var client = ZAFClient.init();
 
 const App = () => {
-	client.invoke("resize", { width: "100%", height: "200px" });
+	client.invoke("resize", { width: "200px", height: "200px" });
 
 	return (
 		<StrictMode>
