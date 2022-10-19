@@ -1,16 +1,14 @@
 import React, { StrictMode } from "react";
 import ReactDOM from "react-dom";
 
-import TicketEditor from "./TicketEditor";
+import Background from "./Background";
 
 var client = ZAFClient.init();
 
 const App = () => {
-	client.invoke("resize", { width: "100%", height: "500px" });
-
 	return (
 		<StrictMode>
-			<TicketEditor client={client} />
+			<Background client={client} />
 		</StrictMode>
 	);
 };
